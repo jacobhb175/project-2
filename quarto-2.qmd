@@ -14,8 +14,7 @@ library(palmerpenguins)
 
 ```{r}
 #| label: make-plot
-#| warning: false
-penguins |> 
+penguins |> drop_na(body_mass_g)|>
   ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
     geom_point() +
     labs(title = "Penguins Body Mass compared to Flipper Length", 
